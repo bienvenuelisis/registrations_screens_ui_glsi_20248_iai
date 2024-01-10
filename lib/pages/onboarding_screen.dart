@@ -5,6 +5,8 @@ class OnboardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    debugPrint(size.toString());
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -76,6 +78,61 @@ class OnboardingScreen extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+      bottomSheet: BottomSheet(
+        builder: (context) {
+          return SizedBox(
+            width: size.width,
+            height: size.height / 2,
+            child: ColoredBox(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CustomButton(
+                    text: "Créer un nouveau compte",
+                    backgroundColor: Colors.white,
+                  ),
+                  CustomButton(text: "Continuer avec google"),
+                  CustomButton(text: "Continuer avec apple"),
+                  CustomButton(text: "Entrer"),
+                ],
+              ),
+              color: Colors.white,
+            ),
+          );
+        },
+        onClosing: () {},
+      ),
+    );
+  }
+}
+
+class CustomButton extends StatelessWidget {
+  const CustomButton({
+    super.key,
+    required this.text,
+    this.backgroundColor,
+  });
+  final String text;
+  final Color? backgroundColor;
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () {},
+      style: TextButton.styleFrom(
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        foregroundColor: Colors.white,
+        fixedSize: Size(
+          MediaQuery.sizeOf(context).width * 0.9,
+          50,
+        ),
+      ),
+      child: Text(
+        text,
+        style: TextStyle(
+          fontSize: 25,
+          fontWeight: FontWeight.bold,
         ),
       ),
     );
