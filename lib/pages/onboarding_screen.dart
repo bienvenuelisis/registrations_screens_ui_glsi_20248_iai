@@ -24,9 +24,10 @@ class OnboardingScreen extends StatelessWidget {
               child: Text(
                 "AccountApp",
                 style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold),
+                  color: Colors.white,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
             Positioned(
@@ -41,7 +42,10 @@ class OnboardingScreen extends StatelessWidget {
                         Expanded(
                           child: Text(
                             "Inscrivez-vous rapidement avec la meilleure application d'authentification.",
-                            style: TextStyle(color: Colors.white, fontSize: 25),
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                            ),
                           ),
                         ),
                       ],
@@ -53,14 +57,19 @@ class OnboardingScreen extends StatelessWidget {
                   TextButton(
                     onPressed: () {},
                     style: TextButton.styleFrom(
-                        backgroundColor: Theme.of(context).colorScheme.primary,
-                        foregroundColor: Colors.white,
-                        fixedSize:
-                            Size(MediaQuery.sizeOf(context).width * 0.9, 50)),
+                      backgroundColor: Theme.of(context).colorScheme.primary,
+                      foregroundColor: Colors.white,
+                      fixedSize: Size(
+                        MediaQuery.sizeOf(context).width * 0.9,
+                        50,
+                      ),
+                    ),
                     child: const Text(
                       "COMMENCER",
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   )
                 ],
